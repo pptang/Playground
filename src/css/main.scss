@@ -1,0 +1,33 @@
+
+html {
+  body {
+    margin: 0;
+    text-align: center;
+  }
+}
+
+$width: 800px;
+
+#banner {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+
+  background-image: url('../img/banner.jpg');
+  background-size: cover;
+  background-position: center;
+
+  .container {
+    margin-top: 430px;
+
+    width: 100%;
+    border-style: solid;
+    border-color: #ffffff;
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+    div {
+      max-width: $width;
+      display: inline-block;
+    }
+  }
+}

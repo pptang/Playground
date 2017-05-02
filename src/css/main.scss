@@ -27,9 +27,19 @@ $width: 800px;
     background-color: rgba(0, 0, 0, .300);
     z-index: 1;
   }
-
+  .logo {
+    margin-top: 90px;
+    width: 88px;
+    height: 88px;
+    line-height: 88px;
+    border: solid 1px #ffffff;
+    border-radius: 100%;
+    margin: 90px auto 0px;
+    z-index: 2;
+    position: relative;
+  }
   .container {
-    margin-top: 195px;
+    clear: both;
     width: 100%;
     border-style: solid;
     border-color: #ffffff;
@@ -41,6 +51,17 @@ $width: 800px;
     display: inline-block;
     position: relative;
     z-index: 2;
+    margin-top: 60px;
+    &:before {
+      content: '';
+      display: block;
+      width: 1px;
+      height: 60px;
+      background: #ffffff;
+      position: absolute;
+      left: calc(50% - 1px);
+      top: -61px;
+    }
     div {
       max-width: $width;
       display: inline-block;
@@ -50,48 +71,57 @@ $width: 800px;
   #navbar {
     position: relative;
     z-index: 2;
-    div {
-      position: relative;
-      border: 1px solid #ffffff;
-      border-radius: 4px;
-      width: 480px;
-      margin-top: 60px;
-      display: inline-block;
-      &:before {
-        content: '';
-        width: 1px;
-        display: block;
-        height: 60px;
-        background: #ffffff;
-        position: absolute;
-        left: calc(50% - 1px);
-        top: -61px;
-      }
-      ul {
-        padding: 0;
-        li {
-          border: 1px solid #ffffff;
-          display: inline-block;
-          width: calc((480px - 3px) / 4);
-          a {
-            text-decoration: none;
-            color: white;
-            &:hover {
-              color: rgba(255, 255, 255, .700);
-            }
-          }
+    position: relative;
+    border: 1px solid #ffffff;
+    border-radius: 4px;
+    width: 480px;
+    margin-top: 60px;
+    margin-bottom: 136px;
+    display: inline-block;
+    &:before {
+      content: '';
+      width: 1px;
+      display: block;
+      height: 60px;
+      background: #ffffff;
+      position: absolute;
+      left: calc(50% - 1px);
+      top: -61px;
+    }
+    ul {
+      padding-left: 0px;
+      list-style: none;
+      margin: 0px;
+      width: 100%;
+      li {
+        position: relative;
+        float: left;
+        display: inline-block;
+        width: calc((100% - 1px * 3) / 4);
+        height: 44px;
+        line-height: 44px;
+        a {
+          text-decoration: none;
+          color: white;
+
+        }
+        &:hover {
+          background-color: rgba(255, 255, 255, .700);
+        }
+        &:nth-child(2n+1) {
+          border-right: 1px solid #ffffff;
         }
       }
-      &:after {
-        content: '';
-        display: block;
-        position: absolute;
-        top: 0;
-        left: calc(50% - 1px);
-        height: 100%;
-        background: #ffffff;
-        width: 1px;
-      }
+    }
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0;
+      left: calc(50% - 1px);
+      height: 100%;
+      background: #ffffff;
+      width: 1px;
     }
   }
 

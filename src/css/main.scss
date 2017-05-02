@@ -17,9 +17,19 @@ $width: 800px;
   background-position: center;
   color: #ffffff;
 
+  &:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .300);
+    z-index: 1;
+  }
+
   .container {
     margin-top: 195px;
-
     width: 100%;
     border-style: solid;
     border-color: #ffffff;
@@ -29,13 +39,18 @@ $width: 800px;
     border-bottom-width: 1px;
     max-width: 800px;
     display: inline-block;
+    position: relative;
+    z-index: 2;
     div {
       max-width: $width;
       display: inline-block;
+      margin-bottom: 54px;
     }
   }
   #navbar {
-    nav {
+    position: relative;
+    z-index: 2;
+    div {
       position: relative;
       border: 1px solid #ffffff;
       border-radius: 4px;
@@ -45,20 +60,37 @@ $width: 800px;
       &:before {
         content: '';
         width: 1px;
-        display:block;
+        display: block;
         height: 60px;
         background: #ffffff;
         position: absolute;
-        left: 50%;
-        top: -60px;
+        left: calc(50% - 1px);
+        top: -61px;
       }
-      li {
-        display: inline-block;
-        padding: 5px;
-        a {
-          text-decoration: none;
-          color: white;
+      ul {
+        padding: 0;
+        li {
+          border: 1px solid #ffffff;
+          display: inline-block;
+          width: calc((480px - 3px) / 4);
+          a {
+            text-decoration: none;
+            color: white;
+            &:hover {
+              color: rgba(255, 255, 255, .700);
+            }
+          }
         }
+      }
+      &:after {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        left: calc(50% - 1px);
+        height: 100%;
+        background: #ffffff;
+        width: 1px;
       }
     }
   }
